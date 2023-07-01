@@ -50,7 +50,7 @@ fn parse_args() -> Result<(Vec<IpAddr>, Vec<u16>, Duration), &'static str> {
     .collect::<Vec<u16>>();
     // Timeout ms/s
     let timeout: Duration = if args.len() > 4 && args[4] == "-t" {
-        if args.len() < 6 { //arg[0]..arg[5]
+        if args.len() < 6 { //arg[0]..arg[5] 
             return Err("Timeout value is missing");
         }
         let timeout_str = &args[5];
